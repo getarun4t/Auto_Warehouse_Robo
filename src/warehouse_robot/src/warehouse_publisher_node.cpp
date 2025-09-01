@@ -1,7 +1,6 @@
 #include "rclcpp/rclcpp.hpp"
 #include "example_interfaces/msg/string.hpp"
 
-
 using String = example_interfaces::msg::String;
 
 class RobotPublisherNode: public rclcpp::Node
@@ -17,7 +16,7 @@ public:
             std::chrono::seconds(1),
             std::bind(&RobotPublisherNode::publishMsg, this)
         );
-
+        RCLCPP_INFO(get_logger(), "Started the publisher");
     }
 
 private:
